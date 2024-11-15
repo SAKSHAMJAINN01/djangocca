@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Tasks</h2>
+        <a href="{% url 'task-create' %}" class="btn btn-primary mb-3">Add New Task</a>
+        
+        <div class="list-group">
+            {% for task in tasks %}
+            <div class="list-group-item">
+                <h5>{{ task.title }}</h5>
+                <p>{{ task.description }}</p>
+                <small>Created: {{ task.created_date }}</small>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
