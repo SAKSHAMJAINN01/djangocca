@@ -12,6 +12,7 @@
                 <h5>{{ task.title }}</h5>
                 <p>{{ task.description }}</p>
                 <small>Created: {{ task.created_date }}</small>
+                <a href="{% url 'task-delete' task.pk %}" class="btn btn-danger">Delete</a>
             </div>
             {% endfor %}
         </div>
